@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav    nav"
+        "main   aside"
+        "footer footer";
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 1rem;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background: linear-gradient(135deg, #ffffff, #052634);
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Navegação */
+nav {
+    grid-area: nav;
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Main */
+main {
+    grid-area: main;
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    line-height: 1.6;
+}
+
+/* Aside */
+aside {
+    grid-area: aside;
+    background: #dfdfdf;
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: var(--muted);
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Hover moderno */
+nav:hover,
+aside:hover,
+main:hover {
+    outline: 1px solid var(--primary);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+            grid-template-columns: 1fr;
+        }
+
+    nav {
+        flex-wrap: wrap;
+    }
+}
